@@ -7,6 +7,7 @@ heuristics.js
 grapher.js
 geronimoo
 .idea
+node_modules
 web/grapher.js
 web/playWeb.js
 web/multiLog.js

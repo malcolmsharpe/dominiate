@@ -2106,7 +2106,6 @@ makeCard "Grand Market", c.Market, {
   mayBeBought: (state) ->
     not(c.Copper in state.current.inPlay)
   ai_playValue: (state, my) -> 795
-  ai_playValue: (state, my) -> 880
 }
 
 makeCard 'Haggler', action, {
