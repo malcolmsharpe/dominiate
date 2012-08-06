@@ -2225,7 +2225,7 @@ makeCard "Horse Traders", action, {
 
 }
 
-# So far Hunting Party is the only card that digs for something 
+# Hunting Party was the first card to dig for something 
 # dependent on the game state.
 makeCard 'Hunting Party', action, {
   cost: 5
@@ -2692,6 +2692,22 @@ makeCard 'Peddler', action, {
         cost = 0
     cost
   ai_playValue: (state, my) -> 770
+}
+
+makeCard 'Sage', action, {
+  cost: 3
+  actions: 1
+  playEffect: (state) ->
+    drawn = state.current.dig(state,
+      (state, card) ->
+        [coins, potions] = card.getCost(state)
+        coins >= 3
+    )
+    if drawn.length > 0
+      card = drawn[0]
+      state.log("...#{state.current.ai} draws #{card}.")
+      state.current.hand.push(card)
+  ai_playValue: (state, my) -> 745
 }
 
 makeCard 'Salvager', action, {

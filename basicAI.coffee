@@ -271,6 +271,7 @@ class BasicAI
     "Highway"
     "Scheme"
     "Wishing Well"
+    "Sage"
     "Golem"  # seems to be reasonable to expect +1 action from Golem
     "Great Hall" if state.cardInfo.Crossroads not in my.hand
     "Spice Merchant" if state.cardInfo.Copper in my.hand
