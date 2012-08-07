@@ -2694,6 +2694,21 @@ makeCard 'Peddler', action, {
   ai_playValue: (state, my) -> 770
 }
 
+makeCard 'Poor House', action, {
+  cost: 1
+  coins: 4
+
+  playEffect: (state) ->
+    state.revealHand(state.current)
+
+    nTreasures = (card for card in state.current.hand when card.isTreasure).length
+    state.current.coins = Math.max(0, state.current.coins - nTreasures)
+
+  # FIXME: This play value only makes sense when Poor House is worth at least
+  # $3.
+  ai_playValue: (state, my) -> 175
+}
+
 makeCard 'Salvager', action, {
   cost: 4
   buys: +1

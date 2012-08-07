@@ -372,6 +372,7 @@ class BasicAI
     "Oracle" # 180
     "Remake" if wantsToTrash >= multiplier * 2   # has a low priority so it'll mostly be played early in the game
     "Adventurer"
+    "Poor House"
     "Harvest"
     "Haggler" # probably needs to make sure the gained card will be wanted; 170
     "Mandarin"
